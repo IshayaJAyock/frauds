@@ -7,9 +7,18 @@ import streamlit
 
 model_name = 'xgboost.pkl'
 
+
+
+# load the model from disk
+xg_model = pickle.load(open(model_name, 'rb'))
+#xg_model = loaded_model.load(xgboost)
+
+
+
+
 # load the model
-xgboost = open(model_name, 'rb')
-xg_model = joblib.load(xgboost)
+# xgboost = open(model_name, 'rb')
+# xg_model = joblib.load(xgboost)
 
 # print(xg_model)
 
@@ -25,7 +34,7 @@ def make_prediction(data):
     # v22,v23,v24,v25,v26,v27,v28,v29,v30]
     pred_arr = np.array(data)
     preds = pred_arr.reshape(1, -1)
-    preds = preds.astype(int)
+    preds = preds.astype(float)
     model_prediction = xg_model.predict(preds)
 
     return model_prediction
