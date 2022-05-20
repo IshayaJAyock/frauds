@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import streamlit
 
-model_name = 'xgboost.pkl'
+model_name = 'xy_model.pkl'
 
 
 
