@@ -9,7 +9,8 @@ model_name = 'xy_model.pkl'
 
 
 # load the model from disk
-xg_model = pickle.load(open(model_name, 'rb'))
+xg_model = open(model_name, 'rb')
+xg_model = pickle.load(xg_model)
 #xg_model = loaded_model.load(xgboost)
 
 
